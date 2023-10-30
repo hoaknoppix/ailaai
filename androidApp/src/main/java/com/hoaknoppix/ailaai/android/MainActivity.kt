@@ -11,6 +11,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import com.hoaknoppix.ailaai.Greeting
 import com.hoaknoppix.ailaai.Platform
+import com.hoaknoppix.ailaai.getAppName
 import com.hoaknoppix.ailaai.getPlatform
 
 class MainActivity : ComponentActivity() {
@@ -37,8 +38,9 @@ fun GreetingView(text: String) {
 @Preview
 @Composable
 fun DefaultPreview() {
+    val appName: String = getAppName()
     val platform: Platform = getPlatform()
     MyApplicationTheme {
-        GreetingView("Hello, you are on $platform. Welcome to Hi Town, or Chào Town (formerly Who is Who, or Ai là ai)")
+        GreetingView("Hello, you are on $platform. Welcome to $appName.")
     }
 }

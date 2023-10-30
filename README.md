@@ -1,5 +1,4 @@
-# Welcome to Hi Town, or Chào Town
-### (formerly Who is Who, or Ai là ai)
+# Ai là ai
 
 This is a KMM version of AiLàiAi to support android and ios.
 
