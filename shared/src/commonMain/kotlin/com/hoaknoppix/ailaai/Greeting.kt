@@ -4,6 +4,6 @@ class Greeting {
     private val platform: Platform = getPlatform()
 
     fun greet(): String {
-        return "Hello Hoa, ${platform.name}!"
+        return "You are on ${platform.name}. Welcome to Hi Town, or Chào Town (formerly Who is Who, or Ai là ai)"
     }
 }

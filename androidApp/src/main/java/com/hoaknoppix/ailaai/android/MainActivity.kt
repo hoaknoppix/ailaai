@@ -7,8 +7,11 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import com.hoaknoppix.ailaai.Greeting
+import com.hoaknoppix.ailaai.Platform
+import com.hoaknoppix.ailaai.getPlatform
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -28,13 +31,14 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun GreetingView(text: String) {
-    Text(text = text)
+    Text(text = text, color = MaterialTheme.colors.secondary)
 }
 
 @Preview
 @Composable
 fun DefaultPreview() {
+    val platform: Platform = getPlatform()
     MyApplicationTheme {
-        GreetingView("Hello, Android!")
+        GreetingView("Hello, you are on $platform. Welcome to Hi Town, or Chào Town (formerly Who is Who, or Ai là ai)")
     }
 }
