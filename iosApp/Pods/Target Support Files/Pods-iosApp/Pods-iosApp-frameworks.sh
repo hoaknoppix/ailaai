@@ -176,9 +176,21 @@ code_sign_if_enabled() {
 }
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_framework "${BUILT_PRODUCTS_DIR}/ActivityIndicatorView/ActivityIndicatorView.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/ExyteChat/ExyteChat.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/ExyteMediaPicker/ExyteMediaPicker.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/FloatingButton/FloatingButton.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/SwiftUIIntrospect/SwiftUIIntrospect.framework"
   install_framework "${PODS_ROOT}/../../shared/build/cocoapods/framework/shared.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_framework "${BUILT_PRODUCTS_DIR}/ActivityIndicatorView/ActivityIndicatorView.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/ExyteChat/ExyteChat.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/ExyteMediaPicker/ExyteMediaPicker.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/FloatingButton/FloatingButton.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/SwiftUIIntrospect/SwiftUIIntrospect.framework"
   install_framework "${PODS_ROOT}/../../shared/build/cocoapods/framework/shared.framework"
 fi
 if [ "${COCOAPODS_PARALLEL_CODE_SIGN}" == "true" ]; then

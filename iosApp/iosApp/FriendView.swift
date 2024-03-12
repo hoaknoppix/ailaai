@@ -8,14 +8,43 @@
 
 import SwiftUI
 
+
+var messages = [[
+"user": "Hoa",
+"photo": "https://upload.wikimedia.org/wikipedia/commons/5/56/Donald_Trump_official_portrait.jpg",
+"message": "This is a message"
+],
+                ["user":  "Jacob",
+                 "photo": "https://upload.wikimedia.org/wikipedia/commons/5/56/Donald_Trump_official_portrait.jpg",
+                "message": "Hi, are you ready for the meeting?"]]
+
 struct FriendView: View {
+
+    @EnvironmentObject var globalVariables: GlobalVariables
+    @Binding var viewMessages: Bool
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ScrollView(showsIndicators: false){
+            VStack(alignment: .leading, spacing: 5){
+                
+//                SearchView(searchText: $searchText)
+                
+                VStack(spacing: 25){
+                    
+                    ForEach(globalVariables.groups, id: \.group.id) { group in
+
+                        ContactItem(viewMessages: $viewMessages,
+                                    group: group
+                    )}
+                }
+               
+            }
+        }
     }
 }
 
 struct FriendView_Previews: PreviewProvider {
     static var previews: some View {
-        FriendView()
+        FriendView(viewMessages: .constant(false))
     }
 }

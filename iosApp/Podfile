@@ -1,5 +1,9 @@
 target 'iosApp' do
   use_frameworks!
-  platform :ios, '14.1'
+  platform :ios, '16'
   pod 'shared', :path => '../shared'
+  #pod 'models', :path => '../../ailaai-shared/models'
+  #pod 'api', :path => '../../ailaai-shared/api'
+  pod 'ExyteChat'
+  pod 'Alamofire'
 end

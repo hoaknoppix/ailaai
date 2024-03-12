@@ -1,0 +1,39 @@
+PODS:
+  - ActivityIndicatorView (1.1.1)
+  - ExyteChat (1.2.2):
+    - ActivityIndicatorView
+    - ExyteMediaPicker
+    - FloatingButton
+    - Introspect
+  - ExyteMediaPicker (2.2.1)
+  - FloatingButton (1.2.2)
+  - Introspect (0.12.0)
+  - shared (1.0)
+
+DEPENDENCIES:
+  - ExyteChat
+  - shared (from `../shared`)
+
+SPEC REPOS:
+  trunk:
+    - ActivityIndicatorView
+    - ExyteChat
+    - ExyteMediaPicker
+    - FloatingButton
+    - Introspect
+
+EXTERNAL SOURCES:
+  shared:
+    :path: "../shared"
+
+SPEC CHECKSUMS:
+  ActivityIndicatorView: f14ac8e200a344fe992577807998b0c8562bd964
+  ExyteChat: ba08a8ed16902ae0afd8fd1aff30b56c5ce97d0e
+  ExyteMediaPicker: 2de24473c3d6088dbde6be9fcf3df8e63a507424
+  FloatingButton: 43a90ea142822f57436d6f1b982e99f9932668ce
+  Introspect: b66b675de8a85d9ef832f3a710d8e3c7db186884
+  shared: 2d3b24a8fe27b7d9e65b8d075a9672fbc6a1aa10
+
+PODFILE CHECKSUM: 73b07fafbb76d4e724a04e067ebcec70609c0d8e
+
+COCOAPODS: 1.12.1

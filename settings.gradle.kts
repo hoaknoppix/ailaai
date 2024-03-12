@@ -16,3 +16,4 @@ dependencyResolutionManagement {
 rootProject.name = "AiLaAi"
 include(":androidApp")
 include(":shared")
+includeBuild("../ailaai-shared")
