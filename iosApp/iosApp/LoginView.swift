@@ -143,7 +143,7 @@ struct LoginView: View, SignInSuccessProtocol, GetGroupsSuccessProtocol, GetUser
                  
                  Spacer()
                  HStack(spacing: 0) {
-                     Text("Don't have an account?")
+                     Text("Don't have an account? ")
                      Button(action: {
                          signedUp = true
                          signedIn = false
