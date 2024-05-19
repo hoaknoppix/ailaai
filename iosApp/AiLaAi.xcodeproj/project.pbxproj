@@ -19,7 +19,6 @@
 		1D18CDB12B712B7700918DED /* notiSvc.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 1D18CDAA2B712B7600918DED /* notiSvc.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		1D18CDB52B712E0D00918DED /* NotificationDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D18CD8E2B70D0E400918DED /* NotificationDTO.swift */; };
 		1D301AF12AF2B4D600F9109A /* GroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D301AF02AF2B4D500F9109A /* GroupView.swift */; };
-		1D3B5CEF2B46845F008B95BA /* Pods_iosApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D3B5CEE2B46845F008B95BA /* Pods_iosApp.framework */; };
 		1D3B5CF52B4691B7008B95BA /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D3B5CF42B4691B7008B95BA /* UserInfo.swift */; };
 		1D4087722B0CAB0600B3BF77 /* GlobalVariables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D4087712B0CAB0600B3BF77 /* GlobalVariables.swift */; };
 		1D4087742B0CADA000B3BF77 /* SwiftAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D4087732B0CADA000B3BF77 /* SwiftAPI.swift */; };
@@ -27,6 +26,7 @@
 		1D4199442B0B1ABD0078CD96 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D4199432B0B1ABD0078CD96 /* LoginView.swift */; };
 		1D7458102AF8CB1F00227377 /* ContactItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D74580F2AF8CB1F00227377 /* ContactItem.swift */; };
 		1D7458122AFB893C00227377 /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D7458112AFB893C00227377 /* MessageView.swift */; };
+		1D768CE52BF9FD5700639CA4 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 1D768CE42BF9FD5700639CA4 /* Localizable.xcstrings */; };
 		1D978D542AF3E98300DF1B8F /* Tabs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D978D532AF3E98300DF1B8F /* Tabs.swift */; };
 		1D978D562AF3ECC300DF1B8F /* FriendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D978D552AF3ECC300DF1B8F /* FriendView.swift */; };
 		1D978D582AF3EDDC00DF1B8F /* LocalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D978D572AF3EDDC00DF1B8F /* LocalView.swift */; };
@@ -35,6 +35,7 @@
 		1DDB2B212AF2B79A00DCF371 /* ExploreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DDB2B202AF2B79A00DCF371 /* ExploreView.swift */; };
 		1DDB2B232AF2B7DF00DCF371 /* StoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DDB2B222AF2B7DF00DCF371 /* StoryView.swift */; };
 		2152FB042600AC8F00CF470E /* iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2152FB032600AC8F00CF470E /* iOSApp.swift */; };
+		54577918621A54E276C5E57B /* Pods_AiLaAi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04FFE21DE52C02F895544208 /* Pods_AiLaAi.framework */; };
 		7555FF83242A565900829871 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7555FF82242A565900829871 /* ContentView.swift */; };
 /* End PBXBuildFile section */
 
@@ -71,6 +72,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		04FFE21DE52C02F895544208 /* Pods_AiLaAi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AiLaAi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		058557BA273AAA24004C7B11 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		058557D8273AAEEB004C7B11 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		173A699AAB472E48D903AF18 /* Pods-iosApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iosApp.debug.xcconfig"; path = "Target Support Files/Pods-iosApp/Pods-iosApp.debug.xcconfig"; sourceTree = "<group>"; };
@@ -87,7 +89,6 @@
 		1D18CDAE2B712B7700918DED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1D301AF02AF2B4D500F9109A /* GroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupView.swift; sourceTree = "<group>"; };
 		1D3B5CEA2B46841C008B95BA /* ExyteChat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ExyteChat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		1D3B5CEE2B46845F008B95BA /* Pods_iosApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_iosApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D3B5CF02B468464008B95BA /* ExyteChat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ExyteChat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D3B5CF42B4691B7008B95BA /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
 		1D4087712B0CAB0600B3BF77 /* GlobalVariables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalVariables.swift; sourceTree = "<group>"; };
@@ -96,6 +97,7 @@
 		1D4199432B0B1ABD0078CD96 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		1D74580F2AF8CB1F00227377 /* ContactItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactItem.swift; sourceTree = "<group>"; };
 		1D7458112AFB893C00227377 /* MessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
+		1D768CE42BF9FD5700639CA4 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		1D82E2612B94AE4C002A2B0D /* notiSvc.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = notiSvc.entitlements; sourceTree = "<group>"; };
 		1D978D532AF3E98300DF1B8F /* Tabs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tabs.swift; sourceTree = "<group>"; };
 		1D978D552AF3ECC300DF1B8F /* FriendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendView.swift; sourceTree = "<group>"; };
@@ -107,6 +109,8 @@
 		1DDB2B222AF2B7DF00DCF371 /* StoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryView.swift; sourceTree = "<group>"; };
 		2152FB032600AC8F00CF470E /* iOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSApp.swift; sourceTree = "<group>"; };
 		3A235FDD42ECF0EE7DDA491D /* Pods_iosApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iosApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4B57FA350E59F181F84F90DF /* Pods-AiLaAi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AiLaAi.release.xcconfig"; path = "Target Support Files/Pods-AiLaAi/Pods-AiLaAi.release.xcconfig"; sourceTree = "<group>"; };
+		5750591BFFCE31918E8F78E9 /* Pods-AiLaAi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AiLaAi.debug.xcconfig"; path = "Target Support Files/Pods-AiLaAi/Pods-AiLaAi.debug.xcconfig"; sourceTree = "<group>"; };
 		5BD88AEBB65BC3C2E7EAC8A5 /* Pods-iosApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iosApp.release.xcconfig"; path = "Target Support Files/Pods-iosApp/Pods-iosApp.release.xcconfig"; sourceTree = "<group>"; };
 		7555FF7B242A565900829871 /* AiLaAi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AiLaAi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7555FF82242A565900829871 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -134,7 +138,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1D3B5CEF2B46845F008B95BA /* Pods_iosApp.framework in Frameworks */,
+				54577918621A54E276C5E57B /* Pods_AiLaAi.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -153,11 +157,11 @@
 			isa = PBXGroup;
 			children = (
 				1D3B5CF02B468464008B95BA /* ExyteChat.framework */,
-				1D3B5CEE2B46845F008B95BA /* Pods_iosApp.framework */,
 				1D3B5CEA2B46841C008B95BA /* ExyteChat.framework */,
 				3A235FDD42ECF0EE7DDA491D /* Pods_iosApp.framework */,
 				1D18CD952B71271100918DED /* UserNotifications.framework */,
 				1D18CD972B71271100918DED /* UserNotificationsUI.framework */,
+				04FFE21DE52C02F895544208 /* Pods_AiLaAi.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -238,6 +242,7 @@
 				1D978D552AF3ECC300DF1B8F /* FriendView.swift */,
 				1D7458112AFB893C00227377 /* MessageView.swift */,
 				1DD04E622B4EE2FD00F0566D /* AppDelegate.swift */,
+				1D768CE42BF9FD5700639CA4 /* Localizable.xcstrings */,
 			);
 			path = iosApp;
 			sourceTree = "<group>";
@@ -247,6 +252,8 @@
 			children = (
 				173A699AAB472E48D903AF18 /* Pods-iosApp.debug.xcconfig */,
 				5BD88AEBB65BC3C2E7EAC8A5 /* Pods-iosApp.release.xcconfig */,
+				5750591BFFCE31918E8F78E9 /* Pods-AiLaAi.debug.xcconfig */,
+				4B57FA350E59F181F84F90DF /* Pods-AiLaAi.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -338,6 +345,7 @@
 			knownRegions = (
 				en,
 				Base,
+				vi,
 			);
 			mainGroup = 7555FF72242A565900829871;
 			productRefGroup = 7555FF7C242A565900829871 /* Products */;
@@ -373,6 +381,7 @@
 			files = (
 				058557D9273AAEEB004C7B11 /* Preview Assets.xcassets in Resources */,
 				058557BB273AAA24004C7B11 /* Assets.xcassets in Resources */,
+				1D768CE52BF9FD5700639CA4 /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -394,7 +403,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-iosApp-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-AiLaAi-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -407,15 +416,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-iosApp/Pods-iosApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-AiLaAi/Pods-AiLaAi-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-iosApp/Pods-iosApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-AiLaAi/Pods-AiLaAi-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-iosApp/Pods-iosApp-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AiLaAi/Pods-AiLaAi-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -738,7 +747,7 @@
 		};
 		7555FFA6242A565B00829871 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 173A699AAB472E48D903AF18 /* Pods-iosApp.debug.xcconfig */;
+			baseConfigurationReference = 5750591BFFCE31918E8F78E9 /* Pods-AiLaAi.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -761,7 +770,7 @@
 		};
 		7555FFA7242A565B00829871 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5BD88AEBB65BC3C2E7EAC8A5 /* Pods-iosApp.release.xcconfig */;
+			baseConfigurationReference = 4B57FA350E59F181F84F90DF /* Pods-AiLaAi.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;

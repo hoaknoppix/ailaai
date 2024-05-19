@@ -8,13 +8,11 @@ PODS:
     - SwiftUIIntrospect
   - ExyteMediaPicker (2.2.2)
   - FloatingButton (1.2.2)
-  - shared (1.0)
   - SwiftUIIntrospect (1.1.1)
 
 DEPENDENCIES:
   - Alamofire
   - ExyteChat
-  - shared (from `../shared`)
 
 SPEC REPOS:
   trunk:
@@ -25,19 +23,14 @@ SPEC REPOS:
     - FloatingButton
     - SwiftUIIntrospect
 
-EXTERNAL SOURCES:
-  shared:
-    :path: "../shared"
-
 SPEC CHECKSUMS:
   ActivityIndicatorView: f14ac8e200a344fe992577807998b0c8562bd964
   Alamofire: 3ca42e259043ee0dc5c0cdd76c4bc568b8e42af7
   ExyteChat: eee014c412fc1ae4237032f391f13c1109873a5e
   ExyteMediaPicker: 70fcb508e2502f422db27bf5f29e1ea831b07d5f
   FloatingButton: 43a90ea142822f57436d6f1b982e99f9932668ce
-  shared: 2d3b24a8fe27b7d9e65b8d075a9672fbc6a1aa10
   SwiftUIIntrospect: db5290a3492424eb4afcab77cebcd4595de3bd71
 
-PODFILE CHECKSUM: e98af784e3a12dabbd87cac9602131fd3505b845
+PODFILE CHECKSUM: 58ef9fe4d2cf64e592ca97b60514dbc5fa28c785
 
-COCOAPODS: 1.12.1
+COCOAPODS: 1.15.2

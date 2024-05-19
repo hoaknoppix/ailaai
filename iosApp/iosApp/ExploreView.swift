@@ -1,11 +1,11 @@
 import SwiftUI
-import shared
+//import shared
 
 struct ExploreView: View {
-	let greet = Greeting().greet()
+//	let greet = Greeting().greet()
 
 	var body: some View {
-		Text("Hello Explore" + greet)
+		Text("Hello Explore")
 	}
 }
 

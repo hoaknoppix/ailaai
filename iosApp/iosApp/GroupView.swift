@@ -1,5 +1,5 @@
 import SwiftUI
-import shared
+//import shared
 
 struct GroupView: View {
     
@@ -13,7 +13,7 @@ struct GroupView: View {
 
 
     let tabs: [Tab] = [
-        .init(icon: Image(systemName: ""), title: "Friends"),
+        .init(icon: Image(systemName: ""), title: String(localized: "Friends")),
 //        .init(icon: Image(systemName: ""), title: "Local"),
     ]
 

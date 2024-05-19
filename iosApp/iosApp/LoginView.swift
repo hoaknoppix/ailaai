@@ -144,6 +144,7 @@ struct LoginView: View, SignInSuccessProtocol, GetGroupsSuccessProtocol, GetUser
                  Spacer()
                  HStack(spacing: 0) {
                      Text("Don't have an account? ")
+                         .foregroundColor(.white)
                      Button(action: {
                          signedUp = true
                          signedIn = false

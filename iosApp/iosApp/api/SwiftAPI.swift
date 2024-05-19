@@ -7,7 +7,7 @@
 //
 
 import Alamofire
-import shared
+//import shared
 import ExyteChat
 import AVFAudio
 import AVFoundation

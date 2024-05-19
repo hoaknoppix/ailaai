@@ -1,0 +1,6 @@
+framework module Pods_AiLaAi {
+  umbrella header "Pods-AiLaAi-umbrella.h"
+
+  export *
+  module * { export * }
+}

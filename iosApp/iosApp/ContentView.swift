@@ -1,5 +1,5 @@
 import SwiftUI
-import shared
+//import shared
 //import Alamofire
 //
 //class Test : KotlinSuspendFunction1 {
