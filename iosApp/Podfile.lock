@@ -1,36 +1,32 @@
 PODS:
-  - ActivityIndicatorView (1.1.1)
   - Alamofire (5.8.1)
-  - ExyteChat (1.3.4):
-    - ActivityIndicatorView
-    - ExyteMediaPicker
-    - FloatingButton
-    - SwiftUIIntrospect
-  - ExyteMediaPicker (2.2.2)
-  - FloatingButton (1.2.2)
-  - SwiftUIIntrospect (1.1.1)
+  - AlertToast (1.3.9)
+  - DSF_QRCode (20.3.0):
+    - SwiftImageReadWrite (~> 1.7.2)
+    - SwiftQRCodeGenerator (~> 2.0.2)
+  - SwiftImageReadWrite (1.7.2)
+  - SwiftQRCodeGenerator (2.0.2)
 
 DEPENDENCIES:
   - Alamofire
-  - ExyteChat
+  - AlertToast
+  - DSF_QRCode
 
 SPEC REPOS:
   trunk:
-    - ActivityIndicatorView
     - Alamofire
-    - ExyteChat
-    - ExyteMediaPicker
-    - FloatingButton
-    - SwiftUIIntrospect
+    - AlertToast
+    - DSF_QRCode
+    - SwiftImageReadWrite
+    - SwiftQRCodeGenerator
 
 SPEC CHECKSUMS:
-  ActivityIndicatorView: f14ac8e200a344fe992577807998b0c8562bd964
   Alamofire: 3ca42e259043ee0dc5c0cdd76c4bc568b8e42af7
-  ExyteChat: eee014c412fc1ae4237032f391f13c1109873a5e
-  ExyteMediaPicker: 70fcb508e2502f422db27bf5f29e1ea831b07d5f
-  FloatingButton: 43a90ea142822f57436d6f1b982e99f9932668ce
-  SwiftUIIntrospect: db5290a3492424eb4afcab77cebcd4595de3bd71
+  AlertToast: e8db15da727beff75500bcf33a78cd617f408fa1
+  DSF_QRCode: 16aaf116027552a3683f3c76cfd568498b70d2cb
+  SwiftImageReadWrite: ef6dfb4a78a0142a62c89cacf549623b26961fd3
+  SwiftQRCodeGenerator: cc02fed209335064d0b0dd61b2a0874b9bc6bd5a
 
-PODFILE CHECKSUM: 58ef9fe4d2cf64e592ca97b60514dbc5fa28c785
+PODFILE CHECKSUM: 4259cff2661348ffefe09772c47ad4f5b79aa5e6
 
 COCOAPODS: 1.15.2

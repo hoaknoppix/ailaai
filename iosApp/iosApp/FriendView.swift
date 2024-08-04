@@ -22,6 +22,7 @@ struct FriendView: View {
 
     @EnvironmentObject var globalVariables: GlobalVariables
     @Binding var viewMessages: Bool
+    @Binding var viewMembers: Bool
     
     var body: some View {
         ScrollView(showsIndicators: false){
@@ -30,12 +31,9 @@ struct FriendView: View {
 //                SearchView(searchText: $searchText)
                 
                 VStack(spacing: 25){
-                    
                     ForEach(globalVariables.groups, id: \.group.id) { group in
-
-                        ContactItem(viewMessages: $viewMessages,
-                                    group: group
-                    )}
+                        ContactItem(viewMessages: $viewMessages, group: group)
+                    }
                 }
                
             }
@@ -45,6 +43,6 @@ struct FriendView: View {
 
 struct FriendView_Previews: PreviewProvider {
     static var previews: some View {
-        FriendView(viewMessages: .constant(false))
+        FriendView(viewMessages: .constant(false), viewMembers: .constant(false))
     }
 }

@@ -8,21 +8,43 @@
 
 import SwiftUI
 import ExyteChat
+import LoadingView
 
-struct ContactItem: View, GetMessagesSuccessProtocol {
+struct ContactItem: View, GetMessagesSuccessProtocol, JoinGroupProtocol, DeleteJoinRequestSuccessProtocol, GetJoinRequestSuccessProtocol {
+    
+    func execute(joinRequests: [GetJoinRequest]) {
+        globalVariables.joinRequests = joinRequests
+    }
+    
+    func completeDeleteJoinRequest(id: String) {
+        if let index = globalVariables.joinRequests.firstIndex(where: { j in
+            j.joinRequest.id == id
+        }) {
+            globalVariables.joinRequests.remove(at: index)
+        }
+    }
+    
+    func join(joinRequestResponse: JoinRequestResponse) {
+        SwiftAPI.getJoinRequests(token: globalVariables.token, onSuccess: self)
+    }
+    
     func execute(messages: [MessageDTO]) {
-        globalVariables.messages = messages
+        globalVariables.messages = Array(Set(messages))
         globalVariables.uiMessages = globalVariables.messages.map {
             SwiftAPI.getUIMessage(message: $0, globalVariables: globalVariables)
         }
-            .sorted {
+        .sorted {
             $0.createdAt < $1.createdAt
         }
-        viewMessages = true
+        isLoading = false
+        withAnimation {
+            viewMessages = true
+        }
         print("Messages are loaded!!!")
     }
     
     @Binding var viewMessages: Bool
+    @State private var isLoading: Bool = false
     var group: Group
     @EnvironmentObject var globalVariables: GlobalVariables
     
@@ -35,7 +57,9 @@ struct ContactItem: View, GetMessagesSuccessProtocol {
 //                avatarSize: 32
 //            )
 //            AvatarView(url: URL(string: group.group.photo ?? ""), avatarSize: 60)
-            CachedAsyncImage(url: URL(string: SwiftAPI.getImageUrl(path: group.group.photo ?? group.members[0].person.photo ?? ""))) { image in
+            CachedAsyncImage(url: URL(string: SwiftAPI.getImageUrl(path: group.group.photo ?? (group.members.first(where: { m in
+                return m.person.id != globalVariables.userInfo?.id
+            }) ?? group.members[0]).person.photo ?? ""))) { image in
                 image
                     .resizable()
                     .scaledToFill()
@@ -64,7 +88,7 @@ struct ContactItem: View, GetMessagesSuccessProtocol {
                 HStack{
                     Text(group.group.name ?? group.members.filter({ MemberElement in
                         return MemberElement.person.id != globalVariables.userInfo?.id
-                    })[0].person.name ?? "")
+                    }).first?.person.name ?? "")
                         .fontWeight(.semibold)
                         .padding(.top, 3)
 //                    Spacer()
@@ -84,9 +108,44 @@ struct ContactItem: View, GetMessagesSuccessProtocol {
                     .padding(.top, 8)
             }
             .padding(.horizontal, 10)
+            if let request = globalVariables.joinRequests.first(where: { j in
+                j.joinRequest.group == group.group.id
+            }) {
+                Button(action: {
+                    SwiftAPI.deleteJoinRequest(token: globalVariables.token, joinRequest: request.joinRequest.id, onSuccess: self)
+                }) {
+                    Text(NSLocalizedString("Withdraw", comment: ""))
+                        .font(.headline)
+                        .foregroundColor(.white)
+                        .padding()
+                        .frame(width: 110, height: 40)
+                        .background(Color.black)
+                        .cornerRadius(15.0)
+                    //                    .shadow(radius: 10.0, x: 20, y: 10)
+                }
+            }
+            else if let peopleInGoup = globalVariables.memberByPerson[group.group.id] {
+                if (globalVariables.userInfo != nil && peopleInGoup[globalVariables.userInfo!.id] == nil) {
+                    Button(action: {
+                        //call join api
+                        SwiftAPI.joinGroup(token: globalVariables.token, groupId: group.group.id, message: "", onSuccess: self)
+                    }) {
+                        Text(NSLocalizedString("Join", comment: ""))
+                            .font(.headline)
+                            .foregroundColor(.white)
+                            .padding()
+                            .frame(width: 110, height: 40)
+                            .background(Color.black)
+                            .cornerRadius(15.0)
+                        //                    .shadow(radius: 10.0, x: 20, y: 10)
+                    }
+                }
+            }
         }.onTapGesture {
             globalVariables.group = group
+            isLoading = true
+            globalVariables.uiMessages.removeAll()
             SwiftAPI.getMesssages(token: globalVariables.token, groupId: group.group.id, onSuccess: self)
-        }
+        }.dotsIndicator(when: $isLoading)
     }
 }

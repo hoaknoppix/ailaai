@@ -4,6 +4,8 @@ target 'AiLaAi' do
   #pod 'shared', :path => '../shared'
   #pod 'models', :path => '../../ailaai-shared/models'
   #pod 'api', :path => '../../ailaai-shared/api'
-  pod 'ExyteChat'
+#  pod 'ExyteChat'
   pod 'Alamofire'
+  pod 'AlertToast'
+  pod 'DSF_QRCode'
 end

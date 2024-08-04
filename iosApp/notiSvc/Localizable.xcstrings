@@ -1,0 +1,56 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "by" : {
+      "localizations" : {
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "bởi"
+          }
+        }
+      }
+    },
+    "Send an attachment" : {
+      "localizations" : {
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gửi một đính kèm"
+          }
+        }
+      }
+    },
+    "someGroup" : {
+      "localizations" : {
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "nhóm nào đó"
+          }
+        }
+      }
+    },
+    "someone" : {
+      "localizations" : {
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ai đó"
+          }
+        }
+      }
+    },
+    "You have been added to group" : {
+      "localizations" : {
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bạn đã được thêm vào nhóm"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

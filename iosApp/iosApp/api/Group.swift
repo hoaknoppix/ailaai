@@ -57,15 +57,19 @@ struct MemberMember: Codable {
 }
 
 // MARK: - Person
-struct Person: Codable {
+struct Person: Codable, Hashable {
     let id, createdAt: String
     let name, photo, inviter: String?
     let seen: String
     let language: Language?
+    static func == (lhs: Person, rhs: Person) -> Bool { return lhs.id == rhs.id }
+
+    func hash(into hasher: inout Hasher) { hasher.combine(id) }
 }
 
 enum Language: String, Codable {
     case vi = "vi"
+    case en = "en"
 }
 
 //typealias Group = [GroupElement]

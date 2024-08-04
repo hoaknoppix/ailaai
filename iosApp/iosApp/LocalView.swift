@@ -9,13 +9,31 @@
 import SwiftUI
 
 struct LocalView: View {
+
+    @EnvironmentObject var globalVariables: GlobalVariables
+    @Binding var viewMessages: Bool
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ScrollView(showsIndicators: false){
+            VStack(alignment: .leading, spacing: 5){
+                
+//                SearchView(searchText: $searchText)
+                
+                VStack(spacing: 25){
+                    
+                    ForEach(globalVariables.localgroups, id: \.group.id) { group in
+                        ContactItem(viewMessages: $viewMessages,
+                                    group: group
+                    )}
+                }
+               
+            }
+        }
     }
 }
 
 struct LocalView_Previews: PreviewProvider {
     static var previews: some View {
-        LocalView()
+        LocalView(viewMessages: .constant(false))
     }
 }

@@ -6,10 +6,17 @@
 import Foundation
 
 // MARK: - MessageElement
-struct MessageDTO: Codable {
+struct MessageDTO: Codable, Hashable {
     let id, createdAt, group, member: String
     let text, attachment: String?
     let attachments: [String]?
+    public static func == (lhs: MessageDTO, rhs: MessageDTO) -> Bool {
+        return lhs.id == rhs.id
+    }
+
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+    }
 }
 
 // MARK: - Encode/decode helpers
@@ -26,9 +33,15 @@ struct AttachmentDTO: Codable, Hashable {
     public static func == (lhs: AttachmentDTO, rhs: AttachmentDTO) -> Bool {
         return lhs.photo == rhs.photo
     }
-
-    public var hashValue: Int {
-        return 0
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(photo)
+        hasher.combine(audio)
+        hasher.combine(photos)
+        hasher.combine(videos)
+        hasher.combine(sticker)
+        hasher.combine(message)
+        hasher.combine(type)
     }
 
     public func encode(to encoder: Encoder) throws {

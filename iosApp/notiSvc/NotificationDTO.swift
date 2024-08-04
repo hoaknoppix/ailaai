@@ -18,8 +18,10 @@ struct NotificationDTO: Codable {
 struct DataClass: Codable {
     let type: String
     let group, person: NotificationElement
-    let message: MessageNotification
-    let show: Bool
+    let message: MessageNotification?
+    let event: String?
+    let details: DetailsElement?
+    let show: Bool?
 }
 
 // MARK: - Group
@@ -32,4 +34,15 @@ struct NotificationElement: Codable {
 struct MessageNotification: Codable {
     let text: String?
     let attachment: String?
+}
+
+// MARK: - Details
+struct  DetailsElement: Codable {
+    let invitor: InvitorElement
+}
+
+// MARK: - Invitor
+struct InvitorElement: Codable {
+    let id: String
+    let name: String
 }

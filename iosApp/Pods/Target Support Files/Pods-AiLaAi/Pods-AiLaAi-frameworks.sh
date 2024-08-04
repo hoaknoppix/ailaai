@@ -176,20 +176,18 @@ code_sign_if_enabled() {
 }
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
-  install_framework "${BUILT_PRODUCTS_DIR}/ActivityIndicatorView/ActivityIndicatorView.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/ExyteChat/ExyteChat.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/ExyteMediaPicker/ExyteMediaPicker.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/FloatingButton/FloatingButton.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/SwiftUIIntrospect/SwiftUIIntrospect.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/AlertToast/AlertToast.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/DSF_QRCode/QRCode.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/SwiftImageReadWrite/SwiftImageReadWrite.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/SwiftQRCodeGenerator/QRCodeGenerator.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
-  install_framework "${BUILT_PRODUCTS_DIR}/ActivityIndicatorView/ActivityIndicatorView.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/ExyteChat/ExyteChat.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/ExyteMediaPicker/ExyteMediaPicker.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/FloatingButton/FloatingButton.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/SwiftUIIntrospect/SwiftUIIntrospect.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/AlertToast/AlertToast.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/DSF_QRCode/QRCode.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/SwiftImageReadWrite/SwiftImageReadWrite.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/SwiftQRCodeGenerator/QRCodeGenerator.framework"
 fi
 if [ "${COCOAPODS_PARALLEL_CODE_SIGN}" == "true" ]; then
   wait

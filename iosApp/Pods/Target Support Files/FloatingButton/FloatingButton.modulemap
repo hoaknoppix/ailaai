@@ -1,6 +1,0 @@
-framework module FloatingButton {
-  umbrella header "FloatingButton-umbrella.h"
-
-  export *
-  module * { export * }
-}

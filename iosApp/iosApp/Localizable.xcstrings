@@ -1,8 +1,25 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "Add Member" : {
+      "localizations" : {
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Thêm thành viên"
+          }
+        }
+      }
+    },
     "Ai La Ai" : {
-
+      "localizations" : {
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ai Là Ai"
+          }
+        }
+      }
     },
     "Cancel" : {
       "extractionState" : "manual",
@@ -21,12 +38,42 @@
         }
       }
     },
+    "Copy transfer code" : {
+      "localizations" : {
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Copy mã đăng nhập"
+          }
+        }
+      }
+    },
     "Do you have an account? " : {
       "localizations" : {
         "vi" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Bạn đã có tài khoản? "
+          }
+        }
+      }
+    },
+    "Do you want to leave?" : {
+      "localizations" : {
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Thoát khỏi nhóm?"
+          }
+        }
+      }
+    },
+    "Do you want to remove" : {
+      "localizations" : {
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bạn có muốn xoá"
           }
         }
       }
@@ -52,6 +99,16 @@
         }
       }
     },
+    "Done" : {
+      "localizations" : {
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Xong"
+          }
+        }
+      }
+    },
     "Friends" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -64,7 +121,17 @@
         "vi" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Bạn Bè"
+            "value" : "Bạn bè"
+          }
+        }
+      }
+    },
+    "Go back" : {
+      "localizations" : {
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quay lui"
           }
         }
       }
@@ -81,7 +148,7 @@
         "vi" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Tên Nhóm"
+            "value" : "Tên nhóm"
           }
         }
       }
@@ -104,13 +171,74 @@
       }
     },
     "Hello Explore" : {
-
+      "localizations" : {
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "XIn chào Explore"
+          }
+        }
+      }
     },
     "Hello Story" : {
-
+      "localizations" : {
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Xin chào Story"
+          }
+        }
+      }
     },
-    "Hello, World!" : {
-
+    "Join" : {
+      "localizations" : {
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tham gia"
+          }
+        }
+      }
+    },
+    "Leave" : {
+      "localizations" : {
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Thoát"
+          }
+        }
+      }
+    },
+    "Local" : {
+      "localizations" : {
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Địa phương"
+          }
+        }
+      }
+    },
+    "Log in failed." : {
+      "localizations" : {
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Đăng nhập không thành công."
+          }
+        }
+      }
+    },
+    "Members" : {
+      "localizations" : {
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Thành viên"
+          }
+        }
+      }
     },
     "New Group" : {
       "extractionState" : "manual",
@@ -142,6 +270,56 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "OK"
+          }
+        }
+      }
+    },
+    "Only member can send a message." : {
+      "localizations" : {
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chỉ thành viên mới được gửi tin nhắn."
+          }
+        }
+      }
+    },
+    "Please enter a valid name (e.g. John Appleseed)" : {
+      "localizations" : {
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Xin vui lòng nhập tên hợp lệ (Ví dụ: Nam Nguyễn)"
+          }
+        }
+      }
+    },
+    "Please save it for future login." : {
+      "localizations" : {
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Xin vui lòng lưu lại mã cho lần đăng nhập sau."
+          }
+        }
+      }
+    },
+    "Remove" : {
+      "localizations" : {
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Xoá"
+          }
+        }
+      }
+    },
+    "Send a message" : {
+      "localizations" : {
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gửi tin nhắn"
           }
         }
       }
@@ -178,6 +356,16 @@
         }
       }
     },
+    "This is not a valid AiLaAi's QR code" : {
+      "localizations" : {
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Đây không phải là mã QR của AiLaAi"
+          }
+        }
+      }
+    },
     "Transfer Code" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -195,19 +383,42 @@
         }
       }
     },
-    "Type a message..." : {
-      "extractionState" : "manual",
+    "Transfer Code is copied" : {
       "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Type a message..."
-          }
-        },
         "vi" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Nhập tin nhắn..."
+            "value" : "Mã đăng nhập đã được sao chép"
+          }
+        }
+      }
+    },
+    "Update Bio" : {
+      "localizations" : {
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sửa giới thiệu bản thân"
+          }
+        }
+      }
+    },
+    "Withdraw" : {
+      "localizations" : {
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rút"
+          }
+        }
+      }
+    },
+    "Your Name" : {
+      "localizations" : {
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tên"
           }
         }
       }
