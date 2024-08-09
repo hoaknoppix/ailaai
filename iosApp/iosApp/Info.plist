@@ -21,15 +21,15 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSCameraUsageDescription</key>
-	<string>We need to scan qr codes, capture photo/video for sharing</string>
+	<string>Allow camera usage to scan qr codes of the user&apos;s profiles, and to send messages with videos &amp; photos.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>We need to get the local groups based on the user's current location.</string>
+	<string>Allow location to see the public local groups around.</string>
 	<key>NSMicrophoneUsageDescription</key>
-	<string>We need to capture voice message for sharing</string>
+	<string>Allow microphone usage to send voice messages in chat.</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
-	<string>We need to capture photo/video for sharing</string>
+	<string>Allow photo library additions usage to send messages with videos &amp; photos from your library.</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>We need to capture photo/video for sharing</string>
+	<string>Allow photo library usage to send messages with videos &amp; photos from your library.</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
@@ -56,3 +56,4 @@
 	</array>
 </dict>
 </plist>
+

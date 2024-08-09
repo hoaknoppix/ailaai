@@ -1,0 +1,6 @@
+"NSLocationWhenInUseUsageDescription" = "Cho phép sử dụng vị trí để thấy những nhóm công khai xung quanh.";
+"NSCameraUsageDescription" = "Cho phép sử dụng camera để quét mã qr của người dùng và gửi tin nhắn có videos & hình ảnh.";
+"NSMicrophoneUsageDescription" = "Cho phép sử dụng micro để gửi tin nhắn với giọng nói.";
+"NSPhotoLibraryAddUsageDescription" = "Cho phép sử dụng thư viện ảnh nâng cao để gửi tin nhắn với videos & hình ảnh.";
+"NSPhotoLibraryUsageDescription" = "Cho phép sử dụng thư viện ảnh để gửi tin nhắn với videos & hình ảnh.";
+

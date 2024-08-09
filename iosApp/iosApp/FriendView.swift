@@ -30,9 +30,13 @@ struct FriendView: View {
                 
 //                SearchView(searchText: $searchText)
                 
-                VStack(spacing: 25){
-                    ForEach(globalVariables.groups, id: \.group.id) { group in
-                        ContactItem(viewMessages: $viewMessages, group: group)
+                if (globalVariables.groups.isEmpty) {
+                    Text(NSLocalizedString("You will see the converation of your groups and your friends here.", comment: ""))
+                } else {
+                    VStack(spacing: 25){
+                        ForEach(globalVariables.groups, id: \.group.id) { group in
+                            ContactItem(viewMessages: $viewMessages, group: group)
+                        }
                     }
                 }
                

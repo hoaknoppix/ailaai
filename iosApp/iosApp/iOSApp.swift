@@ -47,7 +47,7 @@ struct iOSApp: App {
                     AddMemberView(viewMessages: $viewMessages, viewMembers: $viewMembers, viewPersonProfile: $viewPersonProfile, viewAddMember: $viewAddMember).transition(.opacity).environmentObject(appDelegate.globalVariables)
                 }
                 else if (viewProfile) {
-                    ProfileView(viewProfile: $viewProfile, viewMembers: $viewMembers, newName: "", newAbout: "").transition(.opacity).environmentObject(appDelegate.globalVariables)
+                    ProfileView(signedIn: $signedIn, viewProfile: $viewProfile, viewMembers: $viewMembers, newName: "", newAbout: "").transition(.opacity).environmentObject(appDelegate.globalVariables)
                 }
                 else if (viewPersonProfile) {
                     PersonProfileView(viewPersonProfile: $viewPersonProfile, viewMembers: $viewMembers, viewMessages: $viewMessages).transition(.opacity).environmentObject(appDelegate.globalVariables)

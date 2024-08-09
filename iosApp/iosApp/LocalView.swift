@@ -18,7 +18,9 @@ struct LocalView: View {
             VStack(alignment: .leading, spacing: 5){
                 
 //                SearchView(searchText: $searchText)
-                
+                if (globalVariables.localgroups.isEmpty) {
+                    Text(NSLocalizedString("Sorry currently there is no local groups in your location.", comment: ""))
+                }
                 VStack(spacing: 25){
                     
                     ForEach(globalVariables.localgroups, id: \.group.id) { group in

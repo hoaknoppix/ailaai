@@ -39,6 +39,11 @@ protocol TransferSuccessProtocol {
     func execute(code: String)
 }
 
+protocol RemoveAccountSuccessProtocol {
+    func doAfterRemove()
+}
+
+
 
 protocol SignUpSuccessProtocol {
     func execute(token: String)
@@ -322,6 +327,18 @@ struct SwiftAPI {
                 print("Cannot sign in\(error)")
             }
         }
+    }
+    
+    static func removeAccount(token: String, onSuccess: RemoveAccountSuccessProtocol) {
+        let headers: HTTPHeaders = [.authorization(bearerToken: token)]
+        AF.request("\(endPoint)/me/delete", method: .post, parameters: nil, encoding: JSONEncoding.default, headers: headers).responseData(completionHandler: { response in
+            switch response.result {
+            case .success(_):
+                onSuccess.doAfterRemove()
+            case .failure(let error):
+                print("Cannot remove:\(error)")
+            }
+        })
     }
     
     

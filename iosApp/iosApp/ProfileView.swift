@@ -12,7 +12,7 @@ import PhotosUI
 import QRCode
 import LoadingView
 
-struct ProfileView: View, UpdateProfileSuccessProtocol, GetProfileSuccessProtocol, TransferSuccessProtocol, GetUserInfoSuccessProtocol, UpdatePhotoSuccessProtocol {
+struct ProfileView: View, UpdateProfileSuccessProtocol, GetProfileSuccessProtocol, TransferSuccessProtocol, GetUserInfoSuccessProtocol, UpdatePhotoSuccessProtocol, RemoveAccountSuccessProtocol {
     func getQR(text: String) -> Data {
         let image = try! QRCode.build
             .text(text)
@@ -24,6 +24,17 @@ struct ProfileView: View, UpdateProfileSuccessProtocol, GetProfileSuccessProtoco
             .eye.shape(QRCode.EyeShape.Edges())
             .generate.image(dimension: 600, representation: .png())
         return image
+    }
+    
+    func doAfterRemove() {
+        signedIn = false
+        globalVariables.token = ""
+        UserDefaults.standard.removeObject(forKey: "token")
+        showingDeleteConfirmation = false
+        AppState.shared.isLoaded = false
+        globalVariables.userInfo = nil
+        globalVariables.userFriends = Set<Person>()
+        globalVariables.userProfile = nil
     }
     
     func execute() {
@@ -45,6 +56,7 @@ struct ProfileView: View, UpdateProfileSuccessProtocol, GetProfileSuccessProtoco
         isLoading = false
     }
     
+    @Binding var signedIn: Bool
     @Binding var viewProfile: Bool
     @Binding var viewMembers: Bool
     @EnvironmentObject var globalVariables: GlobalVariables
@@ -52,6 +64,7 @@ struct ProfileView: View, UpdateProfileSuccessProtocol, GetProfileSuccessProtoco
     @State private var showingAboutCreation = false
     @State private var showingUpdatePhoto = false
     @State private var showingTransferCodeCopied = false
+    @State private var showingDeleteConfirmation = false
     @State var newName: String
     @State var newAbout: String = "New About"
     @State var isLoading: Bool = false
@@ -133,6 +146,17 @@ struct ProfileView: View, UpdateProfileSuccessProtocol, GetProfileSuccessProtoco
                     
                     if (!showingAboutCreation) {
                         Button(action: {
+                            showingDeleteConfirmation = true
+                        }) {
+                            Text("Delete Account")
+                                .font(.headline)
+                                .foregroundColor(.red)
+                                .padding()
+                                .frame(width: 300, height: 50)
+                                .background(Color.black)
+                                .cornerRadius(15.0)
+                        }
+                        Button(action: {
                             SwiftAPI.transferCode(token: globalVariables.token, onSuccess: self)
                         }) {
                             Text("Copy transfer code")
@@ -193,6 +217,14 @@ struct ProfileView: View, UpdateProfileSuccessProtocol, GetProfileSuccessProtoco
                 }
                 Button("Cancel", role: .cancel) {
                     showingNameCreation = false
+                }
+            }
+            .alert(NSLocalizedString("Do you want to delete this account?", comment: ""), isPresented: $showingDeleteConfirmation) {
+                Button("OK", role: .none) {
+                    SwiftAPI.removeAccount(token: globalVariables.token, onSuccess: self)
+                }
+                Button("Cancel", role: .cancel) {
+                    showingDeleteConfirmation = false
                 }
             }
             .alert(isPresented: $showingTransferCodeCopied) {
