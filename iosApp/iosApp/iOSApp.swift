@@ -19,6 +19,7 @@ struct iOSApp: App {
     @State var viewPersonProfile = false
     @State var viewMembers = false
     @State var viewAddMember = false
+    @State var showTermDialog = false
     @State var selectedTab = 0
     @StateObject var appState = AppState.shared
 
@@ -32,7 +33,7 @@ struct iOSApp: App {
             }
             else if (!signedIn) {
                 if (signedUp) {
-                    SignUpView(signedIn: $signedIn, signedUp: $signedUp).transition(.opacity).environmentObject(appDelegate.globalVariables)
+                    SignUpView(showTermDialog: $showTermDialog, signedIn: $signedIn, signedUp: $signedUp).transition(.opacity).environmentObject(appDelegate.globalVariables)
                 } else {
                     LoginView(signedIn: $signedIn, signedUp: $signedUp).transition(.opacity).environmentObject(appDelegate.globalVariables)
                 }

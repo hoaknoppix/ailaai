@@ -1,6 +1,26 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "Accept" : {
+      "localizations" : {
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Đồng ý"
+          }
+        }
+      }
+    },
+    "Accept the terms" : {
+      "localizations" : {
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Đồng ý điều khoản"
+          }
+        }
+      }
+    },
     "Add Member" : {
       "localizations" : {
         "vi" : {
@@ -98,6 +118,16 @@
         }
       }
     },
+    "Do you want to report this group?" : {
+      "localizations" : {
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bạn muốn báo cáo nhóm này?"
+          }
+        }
+      }
+    },
     "Do you want to sign out?" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -189,6 +219,9 @@
           }
         }
       }
+    },
+    "Hello" : {
+
     },
     "Hello Explore" : {
       "localizations" : {
@@ -314,6 +347,16 @@
         }
       }
     },
+    "Please read and accept our terms of use." : {
+      "localizations" : {
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Xin vui lòng đồng ý và đọc điều khoản sử dụng."
+          }
+        }
+      }
+    },
     "Please save it for future login." : {
       "localizations" : {
         "vi" : {
@@ -324,12 +367,32 @@
         }
       }
     },
+    "Read the terms" : {
+      "localizations" : {
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Đọc điều khoản"
+          }
+        }
+      }
+    },
     "Remove" : {
       "localizations" : {
         "vi" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Xoá"
+          }
+        }
+      }
+    },
+    "Report" : {
+      "localizations" : {
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Báo cáo"
           }
         }
       }
@@ -382,6 +445,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Rất tiếc, hiện tại không có nhóm nào quanh vị trí của bạn."
+          }
+        }
+      }
+    },
+    "Terms of Use" : {
+      "localizations" : {
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Điều khoản sử dụng."
           }
         }
       }

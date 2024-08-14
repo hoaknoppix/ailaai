@@ -98,6 +98,10 @@ protocol UpdatePhotoSuccessProtocol {
     func execute()
 }
 
+protocol ReportSuccessProtocol {
+    func doAfterReport()
+}
+
 protocol SendMediaErrorProtocol {
     func handleError()
 }
@@ -178,10 +182,27 @@ struct SwiftAPI {
         }
     }
     
+    static func reportGroup(token: String, groupId: String, onSuccess: ReportSuccessProtocol) {
+        let headers: HTTPHeaders = [.authorization(bearerToken: token)]
+        let parameters: [String: Any] = [
+            "entity" : "group/\(groupId)",
+            "type": "Other"
+        ]
+        let url = "\(endPoint)/report"
+        AF.request(url, method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: headers).responseData(emptyResponseCodes: [204], completionHandler: { response in
+            print("response:\(response)")
+            switch response.result {
+            case .success(_):
+                onSuccess.doAfterReport()
+            case .failure(let error):
+                print("Cannot report group\(error)")
+            }
+        })
+    }
+    
     static func leaveGroup(token: String, memberId: String, onSuccess: LeaveGroupProtocol) {
         let headers: HTTPHeaders = [.authorization(bearerToken: token)]
         let url = "\(endPoint)/members/\(memberId)/delete"
-        print(url)
         AF.request(url, method: .post, parameters: nil, encoding: JSONEncoding.default, headers: headers).responseData(completionHandler: { response in
             switch response.result {
             case .success(_):

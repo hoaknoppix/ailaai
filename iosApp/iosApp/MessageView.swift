@@ -17,7 +17,11 @@ extension MessageView: SendMediaErrorProtocol {
 }
 
 
-struct MessageView: View, SendMessageSuccessProtocol, GetMessagesSuccessProtocol, SendMediaSuccessProtocol, LeaveGroupProtocol {
+struct MessageView: View, SendMessageSuccessProtocol, GetMessagesSuccessProtocol, SendMediaSuccessProtocol, LeaveGroupProtocol, ReportSuccessProtocol {
+    func doAfterReport() {
+        //do nothing
+    }
+    
     func leave() {
         withAnimation {
             if globalVariables.userInfo != nil {
@@ -63,6 +67,7 @@ struct MessageView: View, SendMessageSuccessProtocol, GetMessagesSuccessProtocol
     @State private var showToastPleaseJoinToSendMessage = false
     @EnvironmentObject var globalVariables: GlobalVariables
     @State private var showingAlert = false
+    @State private var showingReportAlert = false
     @Environment(\.scenePhase) var scenePhase
     
     func execute() {
@@ -129,12 +134,32 @@ struct MessageView: View, SendMessageSuccessProtocol, GetMessagesSuccessProtocol
                             } label: {
                                 Text("Leave")
                             }
+                            Button {
+                                showingReportAlert = true
+                                //                let memberId = globalVariables.memberByPerson[globalVariables.group!.group.id]![globalVariables.userInfo!.id]!
+                                //                SwiftAPI.leaveGroup(token: globalVariables.token, memberId: memberId, onSuccess: self)
+                                //                UserDefaults.standard.set("Guru", forKey: "notificationGroupId")
+                                //                print("Settt")
+                            } label: {
+                                Text(NSLocalizedString("Report", comment: ""))
+                            }
                         }
                     }
                 }
                 .toast(isPresenting: $showToastPleaseJoinToSendMessage, alert: {
                     AlertToast(displayMode: .hud, type: .regular, title: NSLocalizedString("Only member can send a message.", comment: ""))
                 })
+                .alert(NSLocalizedString("Do you want to report this group?", comment: ""), isPresented: $showingReportAlert) {
+                    Button("OK", role: .none) {
+                        let memberId = globalVariables.memberByPerson[globalVariables.group!.group.id]![globalVariables.userInfo!.id]!.id
+                        SwiftAPI.leaveGroup(token: globalVariables.token, memberId: memberId, onSuccess: self)
+                        SwiftAPI.reportGroup(token: globalVariables.token, groupId: globalVariables.group!.group.id, onSuccess: self)
+                        showingAlert = false
+                    }
+                    Button("Cancel", role: .cancel) {
+                        showingAlert = false
+                    }
+                }
                 .alert(NSLocalizedString("Do you want to leave?", comment: ""), isPresented: $showingAlert) {
                     Button("OK", role: .none) {
                         let memberId = globalVariables.memberByPerson[globalVariables.group!.group.id]![globalVariables.userInfo!.id]!.id

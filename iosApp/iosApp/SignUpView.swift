@@ -33,11 +33,15 @@ struct SignUpView: View, SignUpSuccessProtocol, GetGroupsSuccessProtocol, Update
         }
     }
     
+    @Binding var showTermDialog: Bool
+    let url = URL(string: "https://ailaai.app/terms")
     @Binding var signedIn: Bool
     @Binding var signedUp: Bool
     @State private var isShowingNameIsNotValid: Bool = false
     @FocusState private var nameIsFocused: Bool
     @EnvironmentObject var globalVariables: GlobalVariables
+    @Environment(\.scenePhase) var scenePhase
+
     func execute(token: String) {
         withAnimation {
             globalVariables.token = token
@@ -85,12 +89,11 @@ struct SignUpView: View, SignUpSuccessProtocol, GetGroupsSuccessProtocol, Update
                          .cornerRadius(20.0)
                      
                  }.padding([.leading, .trailing], 27.5)
-                 
                  Button(action: {
                      if name.trimmingCharacters(in: .whitespaces).isEmpty {
                          isShowingNameIsNotValid = true
                      } else {
-                         SwiftAPI.signUp(onSuccess: self)
+                         showTermDialog = true
                          nameIsFocused = false
                      }
                  }) {
@@ -121,6 +124,46 @@ struct SignUpView: View, SignUpSuccessProtocol, GetGroupsSuccessProtocol, Update
         .toast(isPresenting: $isShowingNameIsNotValid, alert: {
             AlertToast(displayMode: .hud, type: .regular, title: NSLocalizedString("Please enter a valid name (e.g. John Appleseed)", comment: ""))
         })
+        .alert(NSLocalizedString("Please read and accept our terms of use.", comment: ""), isPresented: $showTermDialog) {
+            VStack {
+                Button(NSLocalizedString("Read the terms", comment: ""), role: .none) {
+                    showTermDialog = true
+                    //FIXME: back for it
+                    
+                    UIApplication.shared.open(url!)
+                }
+                Button(NSLocalizedString("Accept the terms", comment: ""), role: .none) {
+                    SwiftAPI.signUp(onSuccess: self)
+                    showTermDialog = false
+                }
+                Button(NSLocalizedString("Go back", comment: ""), role: .none) {
+                    showTermDialog = false
+                }
+            }
+        }
+        
+        .onChange(of: scenePhase) { newPhase in
+            if newPhase == .active {
+                showTermDialog = true
+                print("1")
+            } else if newPhase == .inactive {
+                print("2")
+            } else if newPhase == .background {
+                print("3")
+            }
+        }
+//        .alert(isPresented: $showTermDialog) {
+//            Text("Hello")
+//            return Alert(
+//                title: Text(NSLocalizedString("Terms of Use", comment: "")),
+//                message: Text(NSLocalizedString("Please read and accept our terms of use.", comment: "")),
+//                primaryButton: .default(Text(NSLocalizedString("Accept", comment: ""))) {
+//                    UIApplication.shared.open(url!)
+//                    SwiftAPI.signUp(onSuccess: self)
+//                },
+//                secondaryButton: .cancel()
+//            )
+//        }
         .background(
             Color(.white))
     }
@@ -128,6 +171,6 @@ struct SignUpView: View, SignUpSuccessProtocol, GetGroupsSuccessProtocol, Update
 
 struct SignUpView_Previews: PreviewProvider {
     static var previews: some View {
-        SignUpView(signedIn: .constant(false), signedUp: .constant(true))
+        SignUpView(showTermDialog: .constant(false), signedIn: .constant(false), signedUp: .constant(true))
     }
 }
