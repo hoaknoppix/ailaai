@@ -550,13 +550,11 @@ struct SwiftAPI {
     }
     
     static func getUIMessage(message: MessageDTO, globalVariables: GlobalVariables)  -> Message {
-        print("I have a message\(message)")
         let belongsToThisUser = globalVariables.personByGroup[message.group]?[message.member]?.id == globalVariables.userInfo?.id
         let photo = globalVariables.personByGroup[message.group]?[message.member]?.photo ?? ""
         let user = User(id: message.member, name: message.member, avatarURL: getImageURL(image: photo), isCurrentUser: belongsToThisUser)
         var attachments: [Attachment] = []
         var recordingUrl: String = ""
-//        message.attachment
         if (message.attachment != nil) {
             let data = message.attachment!.data(using: .utf8)
             let decoder = JSONDecoder()
@@ -594,8 +592,10 @@ struct SwiftAPI {
                 }
             }
         }
-        let isoDate = message.createdAt
-
+        var isoDate = message.createdAt
+        if (!isoDate.contains(".")) {
+            isoDate = isoDate.replacingOccurrences(of: "Z", with: ".000Z")
+        }
         let dateFormatter = ISO8601DateFormatter()
         dateFormatter.formatOptions =  [.withInternetDateTime, .withFractionalSeconds]
         let date = dateFormatter.date(from:isoDate)!
