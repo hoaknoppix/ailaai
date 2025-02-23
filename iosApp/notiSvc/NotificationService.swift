@@ -64,10 +64,15 @@ class NotificationService: UNNotificationServiceExtension {
                 } else if (notification.action == "Group") {
                     if (notification.data.event == "Join") {
                         let prefixStr = NSLocalizedString("You have been added to group", comment: "")
-                        let someGroup = notification.data.group.name ?? NSLocalizedString("someGroup", comment: "")
+                        let someGroup = notification.data.group.name ?? NSLocalizedString("", comment: "")
                         let by = NSLocalizedString("by", comment: "")
                         let someone = notification.data.details?.invitor.name ?? NSLocalizedString("someone", comment: "")
-                        bestAttemptContent.body = "\(prefixStr) \(someGroup) \(by) \(someone)"
+                        if let someGroup = notification.data.group.name {
+                            bestAttemptContent.body = "\(prefixStr) \(someGroup) \(by) \(someone)"
+                        } else {
+                            let postfixStr = "start a conversation with you"
+                            bestAttemptContent.body = "\(someone) \(postfixStr)"
+                        }
                         let data = notification.data
                         userDf.set(data.group.id, forKey: "notificationGroupId")
                         userDf.set(data.details?.invitor.id, forKey: "notificationSenderId")

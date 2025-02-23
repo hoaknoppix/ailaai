@@ -15,13 +15,13 @@
 	<key>CFBundlePackageType</key>
 	<string>$(PRODUCT_BUNDLE_PACKAGE_TYPE)</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.0</string>
+	<string>1.2</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSCameraUsageDescription</key>
-	<string>Allow camera usage to scan qr codes of the user&apos;s profiles, and to send messages with videos &amp; photos.</string>
+	<string>Allow camera usage to scan qr codes of the user's profiles, and to send messages with videos &amp; photos.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Allow location to see the public local groups around.</string>
 	<key>NSMicrophoneUsageDescription</key>
@@ -56,4 +56,3 @@
 	</array>
 </dict>
 </plist>
-

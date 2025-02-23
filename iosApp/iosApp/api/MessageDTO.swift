@@ -7,7 +7,8 @@ import Foundation
 
 // MARK: - MessageElement
 struct MessageDTO: Codable, Hashable {
-    let id, createdAt, group, member: String
+    let id, createdAt, group: String
+    let member: String?
     let text, attachment: String?
     let attachments: [String]?
     public static func == (lhs: MessageDTO, rhs: MessageDTO) -> Bool {
