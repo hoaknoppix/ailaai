@@ -550,9 +550,9 @@ struct SwiftAPI {
     }
     
     static func getUIMessage(message: MessageDTO, globalVariables: GlobalVariables)  -> Message {
-        let belongsToThisUser = globalVariables.personByGroup[message.group]?[message.member]?.id == globalVariables.userInfo?.id
-        let photo = globalVariables.personByGroup[message.group]?[message.member]?.photo ?? ""
-        let user = User(id: message.member, name: message.member, avatarURL: getImageURL(image: photo), isCurrentUser: belongsToThisUser)
+        let belongsToThisUser = globalVariables.personByGroup[message.group]?[message.member ?? ""]?.id == globalVariables.userInfo?.id
+        let photo = globalVariables.personByGroup[message.group]?[message.member ?? ""]?.photo ?? ""
+        let user = User(id: message.member ?? "", name: message.member ?? "", avatarURL: getImageURL(image: photo), isCurrentUser: belongsToThisUser)
         var attachments: [Attachment] = []
         var recordingUrl: String = ""
         if (message.attachment != nil) {

@@ -22,6 +22,7 @@
       }
     },
     "someGroup" : {
+      "extractionState" : "stale",
       "localizations" : {
         "vi" : {
           "stringUnit" : {
