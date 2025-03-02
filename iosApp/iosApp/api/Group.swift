@@ -37,7 +37,8 @@ struct Config: Codable {
 
 // MARK: - LatestMessage
 struct LatestMessage: Codable {
-    let id, createdAt, group, member: String
+    let id, createdAt, group: String
+    let member: String?
     let text: String?
     let attachments: [String]?
     let attachment: String?
